@@ -1,0 +1,163 @@
+<%- include("partials/header") %>
+
+<!-- Caraosel  -->
+<main>
+<section id="testimonials" class="coloured-section">
+    <div
+        id="testimonial-carousel"
+        class="carousel slide"
+        data-ride="carousel"
+    >
+        <div class="carousel-inner slider">
+            <div class="carousel-item active container-fluid" data-interval="3000">
+                <img
+                    class="testimonial-image"
+                    src="images/banner-2.png"
+                    alt="Banner 1"
+                />
+            </div>
+            <div class="carousel-item container-fluid" data-interval="3000">
+                <img
+                    class="testimonial-image"
+                    src="images/banner-1.png"
+                    alt="Banner 2"
+                />
+            </div>
+        </div>
+        <a
+            href="#testimonial-carousel"
+            class="carousel-control-prev"
+            role="button"
+            data-slide="prev"
+        >
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a
+            href="#testimonial-carousel"
+            class="carousel-control-next"
+            role="button"
+            data-slide="next"
+        >
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+</section>
+
+<!-- Procedure -->
+<section id="features" class="white-section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="feature-box col-lg-4">
+                <span><i class="fas fa-clipboard-check icon"></i></span>
+                <span><h3 class="feature-title">Register</h3></span>
+                <span><p>Register yourself with email.</p></span>
+            </div>
+            <div class="feature-box col-lg-4">
+                <span><i class="fas fa-hospital icon"></i></span>
+                <span><h3 class="feature-title">Choose Hospital</h3></span>
+                <span><p>Choose your nearest hospital to get vaccinated.</p></span>
+            </div>
+            <div class="feature-box col-lg-4">
+                <span><i class="far fa-calendar-check icon"></i></span>
+                <span><h3 class="feature-title">Confirm Date and Slot</h3></span>
+                <span><p>
+                    Choose available date slot according to your preference and
+                    confirm slot.
+                </p></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Noticeboard -->
+<main role="main" class="container bootdey.com">
+  
+    <div class="my-3 p-3 bg-white rounded box-shadow" id="noticeboard">
+      <h6 class="border-bottom border-gray pb-2 mb-0">Recent updates</h6>
+      <div class="media text-muted pt-3">
+        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+          <strong class="d-block text-gray-dark">@admin</strong>
+          Hospital registrations going on. <a href="/hospital">Register Now</a>
+        </p>
+      </div>
+      <div class="media text-muted pt-3">
+        <!-- <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" class="mr-2 rounded" width="32" height="32"> -->
+        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+          <strong class="d-block text-gray-dark">@admin</strong>
+          User registrations going on. <a href="/register">Register Now</a>
+        </p>
+      </div>
+      <div class="media text-muted pt-3">
+        <!-- <img src="https://bootdey.com/img/Content/avatar/avatar5.png" alt="" class="mr-2 rounded" width="32" height="32"> -->
+        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+          <strong class="d-block text-gray-dark">@admin</strong>
+          COVID-19 vaccination: More than 2.52 cr doses administered in India so far.
+        </p>
+      </div>
+      <small class="d-block text-right mt-3">
+        <a href="">All updates</a>
+      </small>
+    </div>
+    <br><br>
+  </main>
+
+<!-- Maps -->
+
+<div class="maps container-fluid">
+<section id="maps" class="white-section"></section>
+<div class="row">
+<div class="col iframe">
+<iframe
+    src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d28471.722841858023!2d75.77858037497604!3d26.872841781028654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1shospitals%20near%20me!5e0!3m2!1sen!2sin!4v1615107657839!5m2!1sen!2sin"
+    width="800"
+    height="500"
+    style="border: 0"
+    allowfullscreen=""
+    loading="lazy"
+></iframe> 
+</div>
+<div class="col maps-title">
+    <div style="margin-right: 30px;">
+<h1 class="maps-title big-heading">Find your nearest Hospital</h1>
+</div>
+<div>
+<a class="btn btn-success btn-lg maps-button" href="/register" role="button">Register Now</a>
+</div>
+</div>
+
+</div>
+</section>
+</div>
+
+
+
+<!-- Statistics -->
+<section id="features" class="white-section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="feature-box col-lg-4">
+                <span><i class="fas fa-user-plus icon"></i></span>
+                <span><h3 class="feature-title"><%= user %></h3></span>
+                <span><h4>Users Registered</h4></span>
+            </div>
+            <div class="feature-box col-lg-4">
+                <span><i class="fas fa-syringe icon"></i></span>
+                <span><h3 class="feature-title"><%= vaccinatedUser %></h3></span>
+                <span><h4>Vaccinated Users</h4></span>
+            </div>
+            
+            <div class="feature-box col-lg-4">
+                <span><i class="fas fa-hospital icon"></i></span>
+                <span><h3 class="feature-title"><%= hospitals %></h3></span>
+                <span><h4>Hospitals Registered</h4></span>
+            </div>
+            
+        </div>
+    </div> 
+</section>
+
+
+
+</main>
+
+<%- include("partials/footer") %>

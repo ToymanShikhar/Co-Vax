@@ -1,0 +1,116 @@
+<%- include("partials/header") %> 
+<!-- <div class="card" style="width: 40rem">
+    <ul class="list-group list-group-flush">
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col align-self-start"><b>Hospital Name</b></div>
+                <div class="col align-self-center">
+                    <b>Doses Count</b>
+                </div>
+                <div class="col align-self-end"><b>Patients in Queue</b></div>
+            </div>
+            <% hospitals.forEach(function(hospital){ %>
+            <div class="row justify-content-md-center">
+                <div class="col align-self-start"><%= hospital.name %></div>
+                <div class="col align-self-center">
+                    <%= hospital.dosesCount %>
+                </div>
+                <div class="col align-self-end"><%= hospital.queue %></div>
+            </div>
+            <% }) %>
+        </div>
+    </ul>
+</div> -->
+<div class="col-7">
+    <table class=" table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col" colspan="2">Hospital Name</th>
+                <th scope="col" colspan="2">Doses Count</th>
+                <th scope="col" colspan="2">Patients in Queue</th>
+            </tr>
+        </thead>
+        <tbody class="">
+            <% hospitals.forEach(function(hospital){ %>
+                <tr class="bg-info">
+                    <td colspan="2"><%= hospital.name %></td>
+                    <td colspan="2"><%= hospital.dosesCount %></td>
+                    <td colspan="2"><%= hospital.queue %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>
+
+<button type="button" class="btn btn-primary btn-lg" style="position: absolute; top: 35%; right: 10%;" onclick="openForm()">
+    Place a Vaccine Order
+</button>
+<div class="form-popup" id="myForm">
+    <form action="/admin-order" class="form-container" method="POST">
+        <h1>Book a Order</h1>
+
+        <label for="email"><b>Hospital from</b></label>
+        <select name="fromHospital" id="hospitals">
+            <% hospitals.forEach(function(hospital){ %> 
+            <option value="<%= hospital.name %>"><%= hospital.name %></option>
+             <% }) %>
+        </select>
+        <br>
+
+        <label for="psw"><b>Hospital to</b></label>
+        <select name="toHospital" id="hospitals">
+            <% hospitals.forEach(function(hospital){ %> 
+            <option value="<%= hospital.name %>"><%= hospital.name %></option>
+             <% }) %>
+        </select>
+        <br><br>
+        <label for="quantity"><b>Enter Quantity of Vaccines</b></label>
+        <input type="number" id="quantity" name="quantity" placeholder="Enter Quantity" required>
+        <br><br>
+
+        <button type="submit" class="btn">Confirm</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">
+            Cancel Order
+        </button>
+    </form>
+</div>
+
+<button type="button" class="btn btn-primary btn-lg" style="position: absolute; top: 45%; right: 12.5%;" onclick="openRequest()">
+    Request List
+</button>
+<div class="form-popup" id="request">
+    <form action="" class="form-container" method="">
+    <label for="email"><h2><b>Pending Requests for Vaccine</b></h2></label>
+    <br><br><br><br><br><br><br>
+    <button type="button" class="btn" onclick="closeRequest();openForm()">
+        Confirm Request
+    </button>
+    <br>
+    <button type="button" class="btn cancel" onclick="closeRequest()">
+        Close List
+    </button>
+</form>
+</div>
+
+<a class="btn btn-dark btn-sm button-logout" href="/admin-login" role="button">Log Out</a>
+
+<%- include("partials/footer") %>
+
+<script>
+    function openForm() {
+        document.getElementById("myForm").style.display = "block";
+    }
+
+    function openRequest() {
+        document.getElementById("request").style.display = "block";
+    }
+
+    function closeRequest() {
+        document.getElementById("request").style.display = "none";
+    }
+
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+    }
+</script>
+

@@ -1,1 +1,1 @@
-# Co-Vax
+# CoVax
